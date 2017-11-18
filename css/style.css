@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco');
+body
+{
+	margin: 0;
+	padding: 0;
+	background:#e91e63;
+	font-family: 'Sue Ellen Francisco', cursive;
+
+}
+.loader
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 180px;
+	height: 180px;
+
+	border-radius: 10px;
+	animation: animate 7s linear infinite;
+}
+
+.loader .neon
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0 20px;
+	font: 4em;
+	color: #fff;
+	text-shadow: 0 0 20px #ff005b;
+
+}
+
+
+.loader .neon:after
+{
+	content: attr(data-text);
+	position: absolute;
+	top:0;
+	left: 0;
+	padding: 0 20px;
+	z-index: -1;
+	color: #ff005b;
+	filter: blur(15px);
+}
+
+.loader .neon:before
+{
+	content: '';
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fe3a80;
+	z-index: -2;
+	opacity: ;
+	filter: blur(60px);
+}
+@keyframes animate {
+	0%
+	{
+		transform: translate(-50%, -50%) perspective(200px) rotateX(0deg) rotateY(0deg);
+	}
+	50%
+	{
+		transform: translate(-50%, -50%) perspective(200px) rotateX(-180deg) rotateY(0deg);
+	}
+	100%
+	{
+		transform: translate(-50%, -50%) perspective(200px) rotateX(-180deg) rotateY(-180deg);
+	}
+}
